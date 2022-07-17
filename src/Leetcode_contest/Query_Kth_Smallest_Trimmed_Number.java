@@ -30,7 +30,6 @@ public class Query_Kth_Smallest_Trimmed_Number {
 		}
 	}
 	public static int[] smallestTrimmedNumbers(String[] nums, int[][] queries) {
-		System.out.println("Entering function");
 		int result[] = new int[queries.length];
 		int index = 0 , len = nums[0].length();
 		HashMap<Integer , Node[]> hm = new HashMap<>();
