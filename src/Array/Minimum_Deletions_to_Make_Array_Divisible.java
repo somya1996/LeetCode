@@ -62,9 +62,18 @@ public class Minimum_Deletions_to_Make_Array_Divisible {
 			}
 		}
 		Arrays.sort(nums);
-		for (int i = 0; i < nums.length && nums[i] <= g; i++)
+		int count = 0;
+		/*for (int i = 0; i < nums.length && nums[i] <= g; i++)
 			if (g % nums[i] == 0)
 				return i;
-		return -1;
+				*/
+
+		for(int i=0; i< nums.length&& nums[i]<g; i++){
+			count++;
+		}
+		//return -1;
+		if(count == 0)
+			return -1;
+		return count;
 	}
 }
