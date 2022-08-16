@@ -33,5 +33,34 @@ public class TWO_SUM_II_Sorted_Array {
 			}
 		}
 		return ans;
+		/*
+        int ans[] = new int[2];
+        HashMap<Integer , Integer> hm = new HashMap<Integer , Integer>();
+        for(int i=0; i<numbers.length; i++){
+            if(hm.containsKey(target - numbers[i])){
+                ans[1] = i+1;
+                ans[0] = hm.get(target - numbers[i]);
+                break;
+            }
+            else
+                hm.put(numbers[i] , i+1);
+        }
+        return ans;
+        */
+        /*
+		int len = numbers.length;
+		int L = 0, R = len - 1, sum;
+
+		while(L < R) {
+			sum = numbers[L] + numbers[R];
+
+			if(sum == target) return new int[]{L + 1, R + 1};
+			else if(sum < target) L++;
+			else R--;
+		}
+
+		return new int[]{0, 0};
+
+         */
 	}
 }
