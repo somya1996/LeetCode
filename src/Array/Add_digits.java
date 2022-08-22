@@ -1,0 +1,21 @@
+package Array;
+
+import java.util.Scanner;
+
+public class Add_digits {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		System.out.println(addDigits(n));
+	}
+	public static int addDigits(int num) {
+		int sum = 0;
+		while(num != 0){
+			sum += num%10;
+			num = num/10;
+		}
+		if(sum > 9)
+			return addDigits(sum);
+		return sum;
+	}
+}
