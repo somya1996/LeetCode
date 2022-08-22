@@ -9,6 +9,8 @@ public class Add_digits {
 		System.out.println(addDigits(n));
 	}
 	public static int addDigits(int num) {
+		// Naive Approach
+		/*
 		int sum = 0;
 		while(num != 0){
 			sum += num%10;
@@ -17,5 +19,13 @@ public class Add_digits {
 		if(sum > 9)
 			return addDigits(sum);
 		return sum;
+
+	    */
+		// Mathematical Approach
+		if(num == 0)
+			return 0;
+		if(num % 9 == 0)
+			return 9;
+		return num % 9;
 	}
 }
