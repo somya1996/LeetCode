@@ -1,3 +1,5 @@
+package Sorting_technique;
+
 import java.util.Scanner;
 
 public class Sorting {
