@@ -2,7 +2,7 @@ package Sorting_technique;
 
 import java.util.Scanner;
 
-public class Sorting {
+public class Count_inversions {
 	static int inv_count = 0;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
