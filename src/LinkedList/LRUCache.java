@@ -2,24 +2,25 @@ package LinkedList;
 
 import java.util.HashMap;
 
-class Node {
-	int key;
-	int value;
-	Node pre;
-	Node next;
 
-	public Node(int key, int value) {
-		this.key = key;
-		this.value = value;
-	}
-}
 public class LRUCache {
-	HashMap<Integer, Node> map;
-	int capicity, count;
-	Node head, tail;
+	static class Node {
+		int key;
+		int value;
+		Node pre;
+		Node next;
 
-	public LRUCache(int capacity) {
-		this.capicity = capacity;
+		public Node(int key, int value) {
+			this.key = key;
+			this.value = value;
+		}
+	}
+	static HashMap<Integer, Node> map;
+	static int Max, count;
+	static Node head, tail;
+
+	 LRUCache(int capacity) {
+		Max = capacity;
 		map = new HashMap<>();
 		head = new Node(0, 0);
 		tail = new Node(0, 0);
@@ -43,7 +44,7 @@ public class LRUCache {
 	}
 
 	public int get(int key) {
-		if (map.get(key) != null) {
+		if (map.containsKey(key)) {
 			Node node = map.get(key);
 			int result = node.value;
 			deleteNode(node);
@@ -54,7 +55,7 @@ public class LRUCache {
 	}
 
 	public void set(int key, int value) {
-		if (map.get(key) != null) {
+		if (map.containsKey(key)) {
 			Node node = map.get(key);
 			node.value = value;
 			deleteNode(node);
@@ -62,7 +63,7 @@ public class LRUCache {
 		} else {
 			Node node = new Node(key, value);
 			map.put(key, node);
-			if (count < capicity) {
+			if (count < Max) {
 				count++;
 				addToHead(node);
 			} else {
